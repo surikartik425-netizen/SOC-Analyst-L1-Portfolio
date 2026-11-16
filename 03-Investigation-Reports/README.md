@@ -1,105 +1,47 @@
-# Investigation Report 01: Double-Extension File Creation
+# SOC Analyst L1 – Investigation Reports
 
-## 1. Executive Summary
+This section contains documented security alert investigations
+performed as part of practical SOC Analyst L1 training.
 
-A high-severity alert was generated after a suspicious
-double-extension executable was downloaded to a workstation.
+Each report follows a structured investigation approach,
+including alert identification, evidence collection, analysis,
+verdict classification, and recommended response.
 
-Investigation identified a suspicious external URL and a
-file with multiple VirusTotal detections.
+## Investigation Summary
 
-The alert was classified as a True Positive.
+| No. | Alert | Severity | Verdict | Status |
+|---|---|---|---|---|
+| 01 | Double-Extension File Creation | High | True Positive | Closed |
+| 02 | Potential Data Exfiltration | Critical | False Positive | Closed |
+| 03 | Download from GitHub Repository | Low | False Positive | Closed |
 
-## 2. Alert Information
+## Investigation Methodology
 
-| Field | Details |
-|---|---|
-| Alert Name | Double-Extension File Creation |
-| Date | March 21, 2025 |
-| Time | 13:58 |
-| Severity | High |
-| Status | Closed |
-| Verdict | True Positive |
-| Assignee | You (L1) |
+Each investigation follows these steps:
 
-## 3. Affected System
+1. Alert Identification
+2. Initial Triage
+3. Evidence Collection
+4. Investigation and Analysis
+5. Verdict Classification
+6. Response and Documentation
+7. Alert Closure
 
-| Field | Details |
-|---|---|
-| Hostname | LPT-HR-009 |
-| Username | S.Conway |
-| Process | chrome.exe |
-| File | cats2025.mp4.exe |
-| File Path | C:\Users\S.Conway\Downloads\ |
-| Source URL | freecatvideoshd.monster/cats2025.mp4.exe |
-| MD5 | 14d8486f3f63875ef93cfd240c5dc10b |
+## Analyst Responsibilities
 
-## 4. Investigation Steps
+- Identify suspicious activity.
+- Analyze available security evidence.
+- Correlate endpoint and network information.
+- Determine whether an alert is a True Positive or False Positive.
+- Document findings clearly.
+- Recommend containment or escalation when required.
 
-### Step 1: Alert Review
+## Environment
 
-Reviewed the alert description and identified a suspicious
-double-extension executable file.
+- Platform: TryHackMe
+- Lab: SOC L1 Alert Triage
+- Role: SOC Analyst L1 (Training Simulation)
 
-### Step 2: File Analysis
-
-Examined the filename cats2025.mp4.exe.
-
-The .exe extension indicated an executable file rather
-than a standard MP4 video.
-
-### Step 3: Source Analysis
-
-Reviewed the source URL and identified an untrusted
-external website.
-
-### Step 4: Hash Verification
-
-Checked the MD5 hash using VirusTotal.
-
-The file received multiple security detections,
-increasing confidence that it was malicious.
-
-### Step 5: Verdict Determination
-
-Correlated the suspicious extension, download source,
-and VirusTotal findings.
-
-The evidence supported a True Positive classification.
-
-## 5. Findings
-
-- Suspicious executable downloaded by the user.
-- Double-extension technique identified.
-- Untrusted source URL identified.
-- Multiple VirusTotal detections observed.
-- Malicious file download confirmed in the lab context.
-
-## 6. Response Actions
-
-- Recommended quarantining the suspicious file.
-- Recommended scanning the affected workstation.
-- Recommended checking whether the executable was launched.
-- Recommended reviewing endpoint logs.
-- Documented the findings.
-
-## 7. Final Assessment
-
-**Verdict:** TRUE POSITIVE
-
-**Severity:** High
-
-**Status:** Closed
-
-The alert was correctly classified as a True Positive.
-Containment and further endpoint verification were recommended.
-
-## 8. Analyst Notes
-
-The available lab evidence confirmed a suspicious file download.
-It did not independently establish whether the executable
-was successfully executed or whether the workstation was
-fully compromised.
-
-Further endpoint investigation would be necessary to
-determine the extent of any compromise.
+**Disclaimer:** These reports document simulated lab investigations
+for educational and portfolio purposes. They do not represent
+real-world enterprise incident response engagements.
